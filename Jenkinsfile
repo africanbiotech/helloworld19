@@ -10,6 +10,15 @@ pipeline {
     
     }
   
+    stage ('success') {
+      steps {
+        echo "success Step"
+        sleep 10
+      
+      }
+    
+    }
+   
   }
   
   
