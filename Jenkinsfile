@@ -35,18 +35,18 @@ pipeline {
         echo "deploy Step"
         sh 'mvn test'
         sleep 10
-       
-   stage ('Building image') {
+      
+      }
+    
+    }
+   
+    stage ('Building image') {
       steps{
         script {
         docker.build registry + ":$BUILD_NUMBER"
       }
     }
   }
-      
-      }
-    
-    }
    
   }
   
