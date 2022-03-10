@@ -25,6 +25,15 @@ pipeline {
       }
     
     }
+   stage ('Deploy') {
+      steps { 
+        echo "deploy Step"
+        sh 'mvn test'
+        sleep 10
+      
+      }
+    
+    }
    
   }
   
