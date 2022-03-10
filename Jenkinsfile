@@ -3,6 +3,11 @@ pipeline {
  tools {
   maven 'M2_HOME'
  }
+ environment {
+    registry = "africanbiotech/jenkins_pipeline"
+    registryCredential = 'deploy'
+}
+
   stages {
     stage ('Build') {
       steps {
@@ -30,6 +35,14 @@ pipeline {
         echo "deploy Step"
         sh 'mvn test'
         sleep 10
+       
+   stage('Building image') {
+      steps{
+         script {
+         docker.build registry + ":$BUILD_NUMBER"
+      }
+    }
+  }
       
       }
     
