@@ -37,6 +37,7 @@ pipeline {
     }
    stage ('Deploy') {
       steps { 
+        deploy adapters: [tomcat8(credentialsId: 'deployer', path: '', url: 'http://192.168.1.17:8080')], contextPath: null, war: '**/*.war'
         echo "deploy Step"
         sh 'mvn test'
         sleep 10
