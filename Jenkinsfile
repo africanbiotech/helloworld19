@@ -1,7 +1,7 @@
 pipeline {
  agent any
  tools {
-  maven 'maven'
+  maven 'M2_HOME'
  }
  environment {
     registry = "africanbiotech/jenkins_pipeline"
