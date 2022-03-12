@@ -29,6 +29,7 @@ pipeline {
       steps { 
         echo "success Step"
         sh 'mvn test'
+        sh 'mvn install'
         sleep 10
       
       }
